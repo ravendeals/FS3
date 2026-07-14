@@ -1,0 +1,12 @@
+[build]
+command = """
+cd webapp && npm install && npm run build &&
+cd ../backend && pip install -r ../requirements.txt
+"""
+
+[start]
+command = """
+cd backend && python main.py &
+cd ../bot && python toji_bot.py &
+cd ../webapp && npm run dev
+"""
