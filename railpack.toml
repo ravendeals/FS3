@@ -1,12 +1,16 @@
 [build]
+packages = ["python3", "python3-pip", "nodejs", "npm"]
+
 command = """
-cd webapp && npm install && npm run build &&
-cd ../backend && pip install -r ../requirements.txt
+cd toji-project
+pip install -r requirements.txt
+cd webapp && npm install && npm run build
 """
 
 [start]
 command = """
-cd backend && python main.py &
-cd ../bot && python toji_bot.py &
-cd ../webapp && npm run dev
+cd toji-project
+python backend/main.py &
+python bot/toji_bot.py &
+cd webapp && npm run dev
 """
