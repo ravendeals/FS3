@@ -1,7 +1,12 @@
 #!/bin/bash
+# Everything is inside toji-project/
+cd toji-project
+
+# Install Python deps
+pip install -r requirements.txt
+
 # Start backend
 cd backend
-pip install -r ../requirements.txt
 python main.py &
 
 # Start bot
@@ -13,5 +18,4 @@ cd ../webapp
 npm install
 npm run dev &
 
-# Keep alive
 wait
